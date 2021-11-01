@@ -18,8 +18,8 @@ public class MemberLogin implements Command {
 		MemberVO vo = new MemberVO();
 		vo.setId(request.getParameter("id"));
 		vo.setPassword(request.getParameter("password"));
-		System.out.println(vo.getId());
-		System.out.println(vo.getPassword());
+//		System.out.println(vo.getId());
+//		System.out.println(vo.getPassword());
 		vo = memberDao.selectMember(vo);
 		String viewPage = null;
 		if(vo != null) {
