@@ -5,11 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.seokjin.prj.comm.Command;
 
-public class MemberLoginForm implements Command {
+public class RegisterForm implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "member/memberLoginForm";
+		// TODO Auto-generated method stub
+		return "member/registerForm";
 	}
+
 }

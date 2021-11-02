@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.seokjin.prj.comm.Command;
 
-public class MemberLoginForm implements Command {
+public class Charts implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "member/memberLoginForm";
+		return "chart/chart";
 	}
+
 }

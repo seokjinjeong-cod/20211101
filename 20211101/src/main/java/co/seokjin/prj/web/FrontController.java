@@ -12,11 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.seokjin.prj.comm.Command;
+import co.seokjin.prj.command.AjaxMemberList;
+import co.seokjin.prj.command.AjaxTest;
+import co.seokjin.prj.command.Charts;
 import co.seokjin.prj.command.HomeCommand;
 import co.seokjin.prj.command.Logout;
 import co.seokjin.prj.command.MemberList;
 import co.seokjin.prj.command.MemberLogin;
 import co.seokjin.prj.command.MemberLoginForm;
+import co.seokjin.prj.command.RegisterForm;
+import co.seokjin.prj.command.RegisterMember;
 import co.seokjin.prj.command.Test;
 
 @WebServlet("*.do")
@@ -35,7 +40,12 @@ public class FrontController extends HttpServlet {
 		map.put("/logout.do", new Logout()); // 로그아웃 처리
 		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인폼 호출
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인
-		map.put("/memberList.do", new MemberList()); //
+		map.put("/memberList.do", new MemberList()); // 멤버 목록
+		map.put("/registerForm.do", new RegisterForm()); // 회원가입 폼 호풀
+		map.put("/registerMember.do", new RegisterMember()); // 회원 가입 처리
+		map.put("/charts.do", new Charts()); // 차트 보여주기
+		map.put("/ajaxTest.do", new AjaxTest()); // ajaxtest
+		map.put("/ajaxMemberList.do", new AjaxMemberList()); //
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -50,7 +60,7 @@ public class FrontController extends HttpServlet {
 		
 		if(viewPage != null && !viewPage.endsWith(".do")) {
 			if(viewPage.startsWith("ajax:")) {	// ajax 리턴
-				response.setContentType("text/html; charset=utf-8");
+				response.setContentType("text/plain; charset=utf-8");
 				response.getWriter().append(viewPage.substring(5));
 				return;
 			}
