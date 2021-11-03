@@ -14,9 +14,9 @@
 		var tb = $("<tbody />");
 		$.ajax({
 			url : "ajaxMemberList.do",
-			type : "POST",
 			dataType : "json",
 			success : function(data) {
+				console.log(data)
 				if(data.length > 0){
 					for(var i in data){
 						var id = data[i].id;
@@ -26,11 +26,11 @@
 						var author = data[i].author;
 						
 						var tr = $("<tr />").append(
-								$("<td />").text(id);
-								$("<td />").text(name);
-								$("<td />").text(address);
-								$("<td />").text(tel);
-								$("<td />").text(author);
+								$("<td />").text(id),
+								$("<td />").text(name),
+								$("<td />").text(address),
+								$("<td />").text(tel),
+								$("<td />").text(author)
 						);
 						tb.append(tr);
 					}
@@ -56,7 +56,7 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table id="example" class="display" style="width: 100%">
+				<table id="example" class="display">
 					<thead>
 						<tr>
 							<th>ID</th>

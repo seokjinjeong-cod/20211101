@@ -9,7 +9,7 @@ public class AjaxTest implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		return "chart/ajaxTest";
+		return "chart/ajaxTest2";
 	}
 
 }
